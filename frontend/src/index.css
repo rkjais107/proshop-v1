@@ -2,6 +2,11 @@ main {
     min-height: 80vh;
 }
 
+footer {
+    background-color: #55595c;
+    color: white;
+}
+
 h3 {
     padding: 1rem 0;
 }
