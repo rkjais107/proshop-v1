@@ -23,3 +23,8 @@ h2 {
 .form-margin {
     margin-top: 10px;
 }
+
+.productStyle {
+    border: 5px solid;
+    padding: 50px;
+}

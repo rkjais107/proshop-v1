@@ -33,7 +33,7 @@ const ProductScreen = ({ history, match }) => {
       <Link className='btn btn-light my-3' to='/'>
         Go Back
       </Link>
-
+      <div className='productStyle'>
       {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : <Row>
         <Col md={3}>
           <Image src={product.image} alt={product.name} fluid />
@@ -105,6 +105,7 @@ const ProductScreen = ({ history, match }) => {
           </Card>
         </Col>
       </Row>}
+      </div>
     </>
   )
 }
