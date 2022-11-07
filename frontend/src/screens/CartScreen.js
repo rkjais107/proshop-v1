@@ -8,7 +8,6 @@ import { useParams, useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router'
 
 const CartScreen = () => {
-
   const params = useParams();
   const product_id = params.id;
 
