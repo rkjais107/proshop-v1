@@ -35,10 +35,10 @@ const ProductScreen = ({ history, match }) => {
       </Link>
 
       {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : <Row>
-        <Col md={6}>
+        <Col md={3}>
           <Image src={product.image} alt={product.name} fluid />
         </Col>
-        <Col md={3}>
+        <Col md={5}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h3>{product.name}</h3>
