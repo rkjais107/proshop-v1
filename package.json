@@ -19,6 +19,9 @@
   },
   "author": "Manas Jaiswal",
   "license": "ISC",
+  "engines": {
+    "node": "16.18.0"
+  },
   "bugs": {
     "url": "https://github.com/manaskrishnajaiswal/proshop-v1/issues"
   },
