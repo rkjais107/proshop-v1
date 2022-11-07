@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import colors from 'colors'
 import users from './data/users.js'
 import products from './data/products.js'
+import plantProducts from './data/plantProducts.js'
 import User from './models/userModel.js'
 import Product from './models/productModel.js'
 import Order from './models/orderModel.js'
@@ -22,7 +23,7 @@ const importData = async () => {
 
     const adminUser = createdUsers[0]._id
 
-    const sampleProducts = products.map((product) => {
+    const sampleProducts = plantProducts.map((product) => {
       return { ...product, user: adminUser }
     })
 
