@@ -28,13 +28,19 @@ const ProfileScreen = () => {
 
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
   const { success } = userUpdateProfile;
+  // console.log(success);
 
   useEffect(() => {
     if (!userInfo) {
       navigate("/login");
     } else {
       if (!user || !user.name || success) {
-        dispatch({ type: USER_UPDATE_PROFILE_RESET });
+        if (success) {
+          setTimeout(() => {
+            dispatch({ type: USER_UPDATE_PROFILE_RESET });
+          }, 500);
+        }
+        // dispatch({ type: USER_UPDATE_PROFILE_RESET });
         dispatch(getUserDetails("profile"));
       } else {
         setName(user.name);
@@ -59,7 +65,6 @@ const ProfileScreen = () => {
       <Col md={3}>
         <h2>User Profile</h2>
         {message && <Message variant="danger">{message}</Message>}
-        {}
         {success && <Message variant="success">Profile Updated</Message>}
         {loading ? (
           <Loader />
