@@ -91,7 +91,7 @@ const ProfileScreen = () => {
                 type="password"
                 placeholder="Enter password"
                 value={password}
-                autoComplete="no-password"
+                autoComplete="new-password"
                 onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
