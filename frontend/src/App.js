@@ -12,6 +12,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
 
 const App = () => {
   return (
@@ -31,6 +32,10 @@ const App = () => {
             <Route path="/cart">
               <Route path=":id" element={<CartScreen />} />
               <Route path="" element={<CartScreen />} />
+            </Route>
+            <Route path="/order">
+              <Route path=":id" element={<OrderScreen />} />
+              <Route path="" element={<OrderScreen />} />
             </Route>
           </Routes>
         </Container>
