@@ -10,6 +10,10 @@ import { getOrderDetails, payOrder } from "../actions/orderActions";
 import { ORDER_PAY_RESET } from "../constants/orderConstants";
 
 const OrderScreen = () => {
+  // Calculate prices
+  const addDecimals = (num) => {
+    return (Math.round(num * 100) / 100).toFixed(2);
+  };
   const dispatch = useDispatch();
   // const navigate = useNavigate();
   const params = useParams();
@@ -24,10 +28,6 @@ const OrderScreen = () => {
   const { loading: loadingPay, success: successPay } = orderPay;
 
   if (!loading) {
-    // Calculate prices
-    const addDecimals = (num) => {
-      return (Math.round(num * 100) / 100).toFixed(2);
-    };
     order.itemsPrice = addDecimals(
       order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
     );
@@ -174,7 +174,7 @@ const OrderScreen = () => {
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>₹{order.totalPrice}</Col>
+                  <Col>${order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
               {!order.isPaid && (
