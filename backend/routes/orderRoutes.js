@@ -4,6 +4,7 @@ import {
   addOrderItems,
   getOrderById,
   updateOrderToPaid,
+  getMyOrders,
 } from "../controllers/orderController.js";
 import { protect } from "../middleware/authMiddleware.js";
 
@@ -11,6 +12,11 @@ import { protect } from "../middleware/authMiddleware.js";
 // @route   POST /api/orders
 // @access  Private
 router.route("/").post(protect, addOrderItems);
+
+// @desc    Get logged in user orders
+// @route   GET /api/orders/myorders
+// @access  Private
+router.route("/myorders").get(protect, getMyOrders);
 
 // @desc    Get order by ID
 // @route   POST /api/orders/:id
