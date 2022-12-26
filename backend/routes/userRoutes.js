@@ -5,13 +5,14 @@ import {
   getUserProfile,
   registerUser,
   updateUserProfile,
+  getUsers,
 } from "../controllers/userController.js";
-import { protect } from "../middleware/authMiddleware.js";
+import { protect, admin } from "../middleware/authMiddleware.js";
 
 // @desc    Register a new user
 // @route   POST /api/users
 // @access  Public
-router.post("/", registerUser);
+router.route("/").post(registerUser).get(protect, admin, getUsers);
 
 // @desc    Auth user and get token
 // @route   POST /api/users/login
