@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
+import UserListScreen from "./screens/UserListScreen";
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
               <Route path=":id" element={<OrderScreen />} />
               <Route path="" element={<OrderScreen />} />
             </Route>
+            <Route path="/admin/userlist" element={<UserListScreen />} />
           </Routes>
         </Container>
       </main>
