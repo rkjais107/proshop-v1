@@ -70,7 +70,7 @@ const UserEditScreen = () => {
               <Form.Label className="form-margin">Name</Form.Label>
               <Form.Control
                 type="name"
-                placeholder="Enter email"
+                placeholder="Enter Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
