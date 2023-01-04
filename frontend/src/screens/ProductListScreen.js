@@ -9,13 +9,13 @@ import {
   deleteProduct,
   listProducts,
 } from "../actions/productActions";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { PRODUCT_CREATE_RESET } from "../constants/productConstants";
 
 const ProductListScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const params = useParams();
+  // const params = useParams();
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
